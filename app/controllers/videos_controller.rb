@@ -2,7 +2,7 @@ class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :liked, :unliked]
 
   def index
-    @videos = Video.all
+    @videos = Video.paginate(:page => params[:page], :per_page => 8)
   end
 
   def show
