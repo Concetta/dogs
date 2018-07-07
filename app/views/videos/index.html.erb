@@ -10,7 +10,7 @@
           <div class="card-body">
             <h4 class="card-title"><a href="#"> <%= video.title %></a></h4>
             <p class="card-text"><%= video.description %></p>
-            <% if current_user.voted_for?(video) %>
+            <% if user_signed_in? && current_user.voted_for?(video) %>
               <%= link_to dislike_video_path(video), method: :put do %>
                 Unlike
               <% end %>

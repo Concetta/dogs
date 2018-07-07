@@ -1,4 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+<%= @video.title %>
+<small>Submitted <%= time_ago_in_words(@video.published_at) %> ago</small>
+
+<%= image_tag 'https://placekitten.com/800/400' %>
+
+<h3>Comments</h3>
+
+<%= form_for [@video, Comment.new] do |f| %>
+  <%= f.text_area :body, placeholder: "Add a comment" %><br/>
+  <%= f.submit "Add Comment" %>
+<% end %>
+
+<ul>
+  <%= render(partial: 'comments/comment', collection: @video.comments) %>
+</ul>
