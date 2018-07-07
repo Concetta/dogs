@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: "videos#index"
+  root 'videos#index'
 
-  resources :videos
+  resources :videos do
+    member do
+      put "like", to: "videos#liked"
+      put "dislike", to: "videos#unliked"
+    end
+  end
+
 end
