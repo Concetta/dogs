@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0935ed82-d644-4d26-8c32-5ba8e83138b4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/controllers/comments_controller.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/models/vote.rb" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/app/views/comments/_comment.html.erb" />
-      <change beforePath="$PROJECT_DIR$/.idea/dogs.iml" afterPath="$PROJECT_DIR$/.idea/dogs.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/helpers/application_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/application_helper.rb" />
-      <change beforePath="$PROJECT_DIR$/app/models/video.rb" afterPath="$PROJECT_DIR$/app/models/video.rb" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos/index.html.erb" afterPath="$PROJECT_DIR$/app/views/videos/index.html.erb" />
-      <change beforePath="$PROJECT_DIR$/app/views/videos/show.html.erb" afterPath="$PROJECT_DIR$/app/views/videos/show.html.erb" />
-      <change beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -431,7 +420,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30462000" />
+    <option name="totallyTimeSpent" value="30574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="793" extended-state="0" />
