@@ -8,6 +8,14 @@ class VideosController < ApplicationController
   def show
   end
 
+  def create
+
+  end
+
+  def youtube
+
+  end
+
   def new
     @video = Video.new
   end
