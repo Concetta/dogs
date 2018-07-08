@@ -1,7 +1,5 @@
-
 require 'rubygems'
 gem 'google-api-client', '>0.7'
-
 require 'googleauth/stores/file_token_store'
 require 'googleauth'
 require 'googleauth/web_user_authorizer'
