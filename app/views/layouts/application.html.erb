@@ -31,19 +31,16 @@
         <%= link_to 'Dogstastic', root_url , class: "navbar-brand" %>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+          <div class="navbar-nav ml-auto">
+            <div class="nav-item active">
               <%- if current_user %>
                 <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-              <% else%>
-                <li>
-                  <%= link_to 'Login', new_user_session_path %>
-                </li>
-                <li>
-                  <%= link_to 'Register', new_user_registration_path %>
-                </li>
+              <% else %>
+                  <%= link_to 'Login', new_user_session_path, {:style=>'color:#FFFFFF;  padding-right: 10px;'} %>
+                  <%= link_to 'Register', new_user_registration_path, {:style=>'color:#FFFFFF;'} %>
               <% end %>
-          </ul>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -52,6 +49,9 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
+          <% flash.each do |k,v| %>
+            <div class="alert alert-success"><%= v %></div>
+            <% end %>
           <%= yield %>
         </div>
       </div>
