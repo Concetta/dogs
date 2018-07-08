@@ -17,4 +17,7 @@ class Video < ApplicationRecord
 
   has_many :comments, as: :commentable
 
+  def user_commented?(current_user)
+    self.comments.where(user_id: current_user.id).first.present?
+  end
 end

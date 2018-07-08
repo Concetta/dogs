@@ -10,16 +10,25 @@
           <div class="card-body">
             <h4 class="card-title"><a href="#"> <%= video.title %></a></h4>
             <p class="card-text"><%= video.description %></p>
-            <% if user_signed_in? && current_user.voted_for?(video) %>
-              <%= link_to dislike_video_path(video), method: :put do %>
-                Unlike
-              <% end %>
+            <div>
+              <% if user_signed_in? && current_user.voted_for?(video) %>
+                <%= link_to dislike_video_path(video), method: :put do %>
+                  <%=image_tag("green_paw.png", alt: "unlike", :size => "25x25")%>
+                <% end %>
               <% else %>
                 <%= link_to like_video_path(video), method: :put do %>
-                Like
+                  <%=image_tag("black_paw.png", alt: "like", :size => "25x25")%>
                 <% end %>
-            <% end %>
-            <div><%= video.votes_for.size %></div>
+              <% end %>
+              <%= video.votes_for.size %>
+
+              <% if user_signed_in? && video.user_commented?(current_user) %>
+                <%= link_to image_tag("green_speech_bubble.png", alt: "unlike", :size => "25x25"), video_path(video) %>
+              <% else %>
+                <%= link_to image_tag("black_speech_bubble.png", alt: "unlike", :size => "25x25"), video_path(video) %>
+              <% end %>
+              <%= video.comments.size %>
+            </div>
           </div>
         </div>
       </div>
