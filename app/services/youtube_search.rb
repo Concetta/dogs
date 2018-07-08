@@ -6,7 +6,7 @@ require 'googleauth/web_user_authorizer'
 require 'googleauth/stores/redis_token_store'
 require 'redis'
 require 'google/apis'
-require 'google/apis/youtube_V3'
+# require 'google/apis/youtube_V3'
 
 require 'fileutils'
 #
@@ -46,7 +46,7 @@ def authorize
 end
 #
 # Initialize the API
-service = Google::Apis::YoutubeV3::YouTubeService.new
+# service = Google::Apis::YoutubeV3::YouTubeService.new
 service.client_options.application_name = APPLICATION_NAME
 service.authorization = authorize
 #
