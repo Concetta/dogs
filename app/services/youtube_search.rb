@@ -22,7 +22,7 @@ CREDENTIALS_PATH = File.join(Dir.home, '.credentials',
                              "youtube-ruby-snippet-tests.yaml")
 #
 # # SCOPE FOR WHICH THIS SCRIPT REQUESTS AUTHORIZATION
-SCOPE = Google::Apis::YoutubeV3::AUTH_YOUTUBE_FORCE_SSL
+# SCOPE = Google::Apis::YoutubeV3::AUTH_YOUTUBE_FORCE_SSL
 #
 def authorize
 
