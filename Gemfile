@@ -20,6 +20,7 @@ gem 'acts_as_votable', '~> 0.11.1'
 gem 'will_paginate', '~> 3.1.0'
 gem 'google-api-client'
 gem 'googleauth'
+gem 'redis'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
