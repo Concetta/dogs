@@ -18,7 +18,6 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'acts_as_votable', '~> 0.11.1'
 gem 'will_paginate', '~> 3.1.0'
-gem 'yt', '~> 0.28.0'
 gem 'google-api-client'
 
 group :development, :test do
@@ -34,7 +33,6 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'annotate', git: 'https://github.com/ctran/annotate_models.git'
 end
 
 group :production do

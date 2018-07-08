@@ -1,14 +1,16 @@
-<li>
-  <%= comment.body %> -
-  <small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
+<hr>
+<%= comment.body %> -
+<small>Submitted <%= time_ago_in_words(comment.created_at) %> ago</small>
 
+<% unless comment.commentable_type == "Comment" %>
   <%= form_for [comment, Comment.new] do |f| %>
     <%= f.text_area :body, placeholder: "Add a Reply" %><br/>
+    <%= f.hidden_field :video_id, value: @video.id %>
     <%= f.submit "Reply"  %>
   <% end %>
+<% end %>
+<hr>
 
-  <ul>
-    <%= render partial: 'comments/comment', collection: comment.comments %>
-  </ul>
-
-</li>
+<ul>
+  <%= render partial: 'comments/comment', collection: comment.comments %>
+</ul>

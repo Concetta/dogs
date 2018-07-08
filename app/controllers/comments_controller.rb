@@ -8,21 +8,19 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new comment_params
     @comment.user_id = current_user.id
-    if user_signed_in?
-      if @comment.save
-      redirect_to video_path(@commentable), notice: 'Your comment was successfully posted!'
-      else
-      redirect_to video_path(@commentable), notice: "Your comment wasn't posted!"
-      end
+    if @comment.save
+      flash[:success] = "Your comment was successfully posted!"
+      redirect_to video_path(@comment.video_id)
     else
-      redirect_to new_user_session_path
+      flash[:danger] = "Your comment wasn't posted!"
+      redirect_to video_path(@comment.video_id)
     end
   end
 
   private
 
   def comment_params
-    params.require(:comment).permit(:body, :user_id)
+    params.require(:comment).permit(:body, :user_id, :video_id)
   end
 
   def find_commentable

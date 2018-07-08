@@ -5,11 +5,9 @@
     <% @videos.each do |video| %>
       <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="#"><img class="card-img-top" src=""  alt=""></a>
-          <%= link_to 'Show', video %>
+          <iframe src='https://www.youtube.com/embed/<%= video.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
           <div class="card-body">
-            <h4 class="card-title"><a href="#"> <%= video.title %></a></h4>
-            <p class="card-text"><%= video.description %></p>
+            <h6 class="card-title"><%= video.title %></h6>
             <div>
               <% if user_signed_in? && current_user.voted_for?(video) %>
                 <%= link_to dislike_video_path(video), method: :put do %>
@@ -21,9 +19,10 @@
                 <% end %>
               <% end %>
               <%= video.votes_for.size %>
-
               <% if user_signed_in? && video.user_commented?(current_user) %>
                 <%= link_to image_tag("green_speech_bubble.png", alt: "unlike", :size => "25x25"), video_path(video) %>
+              <% elsif !user_signed_in?%>
+                <%= link_to image_tag("black_speech_bubble.png", alt: "unlike", :size => "25x25"), new_user_session_path %>
               <% else %>
                 <%= link_to image_tag("black_speech_bubble.png", alt: "unlike", :size => "25x25"), video_path(video) %>
               <% end %>
@@ -37,7 +36,35 @@
   <!-- /.row -->
   <div>
     <!-- Pagination -->
-    <%= will_paginate @videos %>
+    <%= will_paginate @videos, :class => ".pagination" %>
+
+
+
+
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">1</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">2</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#">3</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+
   </div>
 
 </div>

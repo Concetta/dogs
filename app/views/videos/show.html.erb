@@ -1,17 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= @video.title %>
-<small>Submitted <%= time_ago_in_words(@video.published_at) %> ago</small>
-
-<%= image_tag 'https://placekitten.com/800/400' %>
-
-<h3>Comments</h3>
-
+<h3>Comments for <%=@video.title %></h3>
+<hr>
 <%= form_for [@video, Comment.new] do |f| %>
   <%= f.text_area :body, placeholder: "Add a comment" %><br/>
+  <%= f.hidden_field :video_id, value: @video.id %>
   <%= f.submit "Add Comment" %>
 <% end %>
+<hr>
 
 <ul>
-  <%= render(partial: 'comments/comment', collection: @video.comments) %>
+  <%= render(partial: 'comments/comment', collection: @video.comments, locals: {video_id: @video.id}) %>
 </ul>
