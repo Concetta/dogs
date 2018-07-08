@@ -12,12 +12,12 @@
             <p class="card-text"><%= video.description %></p>
             <% if user_signed_in? && current_user.voted_for?(video) %>
               <%= link_to dislike_video_path(video), method: :put do %>
-                Unlike
+                <%=image_tag("red_heart.png", alt: "unlike", :size => "25x25")%>
               <% end %>
-              <% else %>
-                <%= link_to like_video_path(video), method: :put do %>
-                Like
-                <% end %>
+            <% else %>
+              <%= link_to like_video_path(video), method: :put do %>
+                <%=image_tag("black_heart.png", alt: "like", :size => "25x25")%>
+              <% end %>
             <% end %>
             <div><%= video.votes_for.size %></div>
           </div>
