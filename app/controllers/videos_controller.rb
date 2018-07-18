@@ -1,5 +1,5 @@
 class VideosController < ApplicationController
-  before_action :set_video, only: [:show, :edit, :liked, :unliked]
+  before_action :set_video, only: [:show, :liked, :unliked]
 
   def index
     @videos = Video.paginate(:page => params[:page], :per_page => 8)
@@ -10,10 +10,6 @@ class VideosController < ApplicationController
 
   def youtube
 
-  end
-
-  def new
-    @video = Video.new
   end
 
   def liked
@@ -40,7 +36,4 @@ class VideosController < ApplicationController
       @video = Video.find(params[:id])
     end
 
-    def video_params
-      params.fetch(:video, {})
-    end
 end
