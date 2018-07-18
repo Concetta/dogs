@@ -15,7 +15,9 @@ Rails 5.1.6
 
 You will need to add the client_secrets.json file to your project to obtain YouTube videos. 
 
-The application is deployed on Heroku
+The application is deployed on Heroku:
+
+https://pawstastic.herokuapp.com/
 
 In order to obtain YouTube videos: 
 
@@ -32,7 +34,9 @@ Future features:
 * Comment page needs styling & JS components so that page does not need to reload
 * Bootstraps hover styling needs to be removed
 * If User is not signed in and clicks like - the user should be redirected to that action after sign up
+* Tests
 
-Repositories 
-private: git@bitbucket.org:ConcettaBug/dogs.git
-public: git@github.com:Concetta/dogs.git
+Repositories: 
+
+* private: git@bitbucket.org:ConcettaBug/dogs.git
+* public: git@github.com:Concetta/dogs.git
