@@ -32,3 +32,7 @@ Future features:
 * Comment page needs styling & JS components so that page does not need to reload
 * Bootstraps hover styling needs to be removed
 * If User is not signed in and clicks like - the user should be redirected to that action after sign up
+
+Repositories 
+private: git@bitbucket.org:ConcettaBug/dogs.git
+public: git@github.com:Concetta/dogs.git
