@@ -36,6 +36,5 @@ Future features:
 * If User is not signed in and clicks like - the user should be redirected to that action after sign up
 * Tests
 
-Repositories: 
 
-* private: https://bitbucket.org/ConcettaBug/coding-samples/wiki/Home
+https://bitbucket.org/ConcettaBug/coding-samples/wiki/Home
