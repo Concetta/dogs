@@ -38,5 +38,4 @@ Future features:
 
 Repositories: 
 
-* private: git@bitbucket.org:ConcettaBug/dogs.git
-* public: git@github.com:Concetta/dogs.git
+* private: https://bitbucket.org/ConcettaBug/coding-samples/wiki/Home
